@@ -26,8 +26,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-#Developer specific docker-compose
-/docker-compose.yml
+#Developer-specific docker-compose (now tracked for server deploy)
+#/docker-compose.yml
 dev/
 # Additional build files
 src/main/resources/adminPassword.txt
