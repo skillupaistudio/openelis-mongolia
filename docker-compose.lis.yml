@@ -1,0 +1,11 @@
+# Override for lis.gyals.tech HTTPS cert on Droplet
+# Usage on server:
+#   cd /opt/openelis-mongolia
+#   docker compose -f docker-compose.yml -f docker-compose.lis.yml up -d
+
+services:
+  proxy:
+    volumes:
+      # Map real Let's Encrypt cert into paths nginx already uses
+      - /etc/letsencrypt/live/lis.gyals.tech/fullchain.pem:/etc/nginx/certs/apache-selfsigned.crt:ro
+      - /etc/letsencrypt/live/lis.gyals.tech/privkey.pem:/etc/nginx/keys/apache-selfsigned.key:ro
